@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600;700&family=Josefin+Slab:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Mulish:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300;1,400&display=swap');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css");
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+:root {
+    --font-primary: "Baloo Da 2", serif;
+    --font-secundary: "Josefin Slab", serif;
+    --font-action: "Mulish", serif;
+}
+
+.navbar {
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    background-color: rgb(67, 182, 175);
+}
+
+.navbar input {
+    width: 450px;
+    height: 30px;
+    border-radius: 50px;
+    padding-left: 10px;
+}
+
+.nav-itens {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgb(74, 201, 193);
+    font-family: var(--font-primary);
+    font-size: 25px;
+}
+
+.nav-itens a {
+    color: white;
+}
+
+/*Inicio da estilização do slider*/
+
+/*Defino tamanho do meu slider e o último comando serve para informar que só quero que a primeira 
+imagem seja apresentada no display*/
+.slider {
+    margin: 0 auto;
+    width: 1400px;
+    height: 400px;
+    overflow: hidden;
+}
+
+/*Informo o tamanho da div slider, para que cada imagem seja posicionada cobrindo o display*/
+.slides {
+    width: 400%;
+    height: 400px;
+    display: flex;
+}
+
+/*Oculto os inputs da classe slides*/
+.slides input {
+    display: none;
+}
+
+/*Defino a largura de cada imagem, que no caso será 100% */
+.slide {
+    width: 25%;
+    position: relative;
+}
+
+/*Defino o tamanho da imagem*/
+.slide img {
+    width: 1400px;
+}
+
+/*Inicio da estilizacao da navegação automatica*/
+
+/*Defino o tamanho dos*/
+.navigation-auto div {
+    border: 2px solid #20a6ff;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.navigation-auto {
+    position: absolute;
+    width: 1400px;
+    margin-top: 320px;
+    display: flex;
+    justify-content: center;
+}
+
+.navigation-auto div:not(:last-child) {
+    margin-right: 40px;
+}
+
+#radio1:checked~.navigation-auto .auto-btn1,
+#radio2:checked~.navigation-auto .auto-btn2,
+#radio3:checked~.navigation-auto .auto-btn3 {
+    background-color: #fff;
+}
+
+/*Fim da estilizacao da navegação automatica*/
+
+/*Inicio da estilizacao da navegação manual*/
+
+/*Posiciono a classe entre o slider*/
+.manual-navigation {
+    position: absolute;
+    width: 1400px;
+    margin-top: -80px;
+    display: flex;
+    justify-content: center;
+}
+
+/*Defino a borda do slider, e a transição da mesma*/
+.manual-btn {
+    border: 2px solid #fff;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+
+/*Todos exceto no último haverá espaçamento*/
+.manual-btn:not(:last-child) {
+    margin-right: 40px;
+}
+
+/*Ao passar o mouse no botão ele ficará branco*/
+.manual-btn:hover {
+    background-color: #fff;
+}
+
+/*Ao clicar no radio a primeira imagem será apresentada*/
+#radio1:checked~.first {
+    margin-left: 0;
+}
+
+/*Ao clicar no radio a segunda imagem será apresentada*/
+#radio2:checked~.first {
+    margin-left: -25%;
+}
+
+/*Ao clicar no radio a terceira imagem será apresentada*/
+#radio3:checked~.first {
+    margin-left: -50%;
+    /*Fim da estilizacao da navegação manual*/
+}
+
+/*Fim da estilização do slider*/
